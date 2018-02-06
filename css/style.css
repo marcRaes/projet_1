@@ -1,0 +1,865 @@
+/* ---------------- */
+/* ==   SOMMAIRE    */
+/* ---------------- */
+
+/* 1- @keyframes  */
+/* 2- Reset CSS + BODY  */
+/* 3- Propriétés identiques */
+/* 4- HEADER  */
+/* 5- SLIDESHOW */
+/* 6- SERVICES */
+/* 7- Logos du FontAwesome */
+/* 8- PORTFOLIO */
+/* 9- CONTACT */
+/* 10- MEDIA QUERIES */
+
+
+/* -------------------------------------------------------------------- */
+/* ==   Déclaration des @keyframes pour les différentes animations      */
+/* -------------------------------------------------------------------- */
+/* --    Création de l'animation du slide    -- */
+/* Navigateurs récents */
+@keyframes slideshowAnimation {
+    0%, 35% { transform: translateX(0);}
+    40%, 75% { transform: translateX(-50%);}
+    80%, 100% { transform: translateX(0);}
+}
+/* Webkit */
+@-webkit-keyframes slideshowAnimation {
+    0%, 35% { transform: translateX(0);}
+    40%, 75% { transform: translateX(-50%);}
+    80%, 100% { transform: translateX(0);}
+}
+/* Mozilla */
+@-moz-keyframes slideshowAnimation {
+    0%, 35% { transform: translateX(0);}
+    40%, 75% { transform: translateX(-50%);}
+    80%, 100% { transform: translateX(0);}
+}
+/* Opera */
+@-o-keyframes slideshowAnimation {
+    0%, 35% { transform: translateX(0);}
+    40%, 75% { transform: translateX(-50%);}
+    80%, 100% { transform: translateX(0);}
+}
+
+/* --    Création de l'animation de la ligne de position    -- */
+/* Navigateurs récents */
+@keyframes slideshowPosition {
+    0%, 35% { transform: translateX(0);}
+    40%, 75% { transform: translateX(186%);}
+    80%, 100% { transform: translateX(0);}
+}
+/* Webkit */
+@-webkit-keyframes slideshowPosition {
+    0%, 35% { transform: translateX(0);}
+    40%, 75% { transform: translateX(186%);}
+    80%, 100% { transform: translateX(0);}
+}
+/* Mozilla */
+@-moz-keyframes slideshowPosition {
+    0%, 35% { transform: translateX(0);}
+    40%, 75% { transform: translateX(186%);}
+    80%, 100% { transform: translateX(0);}
+}
+/* Opera */
+@-o-keyframes slideshowPosition {
+    0%, 35% { transform: translateX(0);}
+    40%, 75% { transform: translateX(186%);}
+    80%, 100% { transform: translateX(0);}
+}
+
+/* ------------------- */
+/* ==   Reset CSS      */
+/*      BODY           */
+/* ------------------- */
+/* --   Reset CSS    -- */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* --   BODY    -- */
+body {
+    width: 100%; /* Le site occupera 100% de la largeur */
+    max-width: 1920px; /* Au-delà de 1920px on arrête de grossir */
+    min-width: 320px;
+    margin: auto; /* Le site sera centré sur les "très" grande résolutions */
+}
+
+/* --------------------------------- */
+/* ==    Propriétés identiques       */
+/* --------------------------------- */
+/* --   Article   -- */
+article {
+    display: flex; /* Aligne le contenu de la section horizontalement */
+    justify-content: center; /* Centre le contenu */
+    margin-top: 3%;
+}
+
+/* --   Balises strong et em    -- */
+strong, em {
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* --   Balise ul   -- */
+ul {
+    display: flex; /* Aligne les éléments horizontalement */
+}
+
+/* --   Balise li   -- */
+li {
+    list-style-type: none; /* Suppression des puces sur les liens */
+}
+
+/* -------------------- */
+/* ==     HEADER        */
+/* -------------------- */
+header {
+    padding-top: 100px; /* Cette marge permettra de placer le slideshow correctement en dessous du menu de navigation */
+}
+
+/* --   Logo + Menu de navigation   -- */
+#topHeader {
+    width: 100%; /* Le header occupera toute la largeur de l'écran */
+    height: 100px; /* Sa hauteur sera de 100px */
+    max-width: 1920px; /* Permets de laisser le header centrer avec le contenu sur les "très" grandes résolutions */
+    position: fixed; /* Celui-ci aura une position fixe */
+    top: 0; /* Place la div #topHeader en haut de page */
+    background-color: #fff; /* Le fond du header sera blanc */
+    display: flex; /* Aligne les éléments horizontalement */
+    justify-content: space-around; /* Aligne les éléments à droite et à gauche avec une marge de chaque coté */
+    align-items: center; /* Les éléments seront centrés verticalement */
+    z-index: 99; /* Le menu reste devant le contenu */
+}
+
+/* --   Menu de navigation  -- */
+nav a {
+    padding: 38px 16px; /* Marges des liens */
+    text-decoration: none;
+    color: #777;
+    text-transform: capitalize; /* Permets de passer la première lettre des liens en majuscules */
+}
+
+nav a:hover, nav a:focus, a.active { /* Focus pour l'accésibilité */
+    color: #575757;
+    border-top: 3px solid #5cadd3; /* Bordure en haut du lien sélectionner */
+}
+
+/* ---------------------- */
+/* ==      SLIDESHOW      */
+/* ---------------------- */
+/*   Corrige la remonter du Slide dû à l'utilisation manuelle    */
+#slider, #slideshow {
+    padding-top: 100px; /* On commence par faire descendre le tout */
+    /* Ces deux marges négatives permettent de compenser le décalage créé par le padding-top */
+    top: -100px;
+    margin-bottom: -100px;
+}
+
+#slideshow {
+    position: relative;
+    width: 100%; /* Le slideshow occupera 100% de l'écran à tout moment */
+    height: 100%; /* La hauteur du slideshow permettra de placer également la barre de position facilement */
+    overflow: hidden; /* Cache les autres images du slideshow */
+}
+
+#slider {
+    position: relative;
+    left: 0;
+    width: 200%; /* 2 images qui occupent 100% de l'écran : 2*100 = 200% */
+    display: flex; /* Aligne les images à l'horizontale */
+    /* La transition se fait lors du clic sur un bouton de navigation */
+    transition: left 2s; /* Navigateurs récents */
+    -webkit-transition: left 2s; /* Webkit */
+    -moz-transition: left 2s; /* Mozilla */
+    -o-transition: left 2s; /* Opera */
+    /* Déclenche l'animation créer en début de fichier */
+    animation: slideshowAnimation 32s infinite alternate; /* Navigateurs récents */
+    -webkit-animation: slideshowAnimation 32s infinite alternate; /* Webkit */
+    -moz-animation: slideshowAnimation 32s infinite alternate; /* Mozilla */
+    -o-animation: slideshowAnimation 32s infinite alternate; /* Opera */
+}
+
+#slider figure, #slider figure img {
+    width: 100%; /* Les images et leur conteneur prennent toute la largeur de la page */
+}
+
+#slider figure figcaption {
+    position: absolute; /* Permets de sortir l’élément du flux afin de le placer sur l'image */
+    top: 38%;
+    width: 45%;
+    padding-left: 3%;
+    z-index: 99; /* Fait passer le figcation devant les boutons de navigation */
+    color: #fff;
+}
+
+/*  Titres texte slideshow  */
+#slider figcaption h1 {
+    font-weight: 700;
+    font-size: 2.2em;
+    text-transform: uppercase; /* Le texte sera affiché en majuscules */
+}
+
+/*   Titre texte second slideshow    */
+#slider figure:last-child figcaption h1 {
+    font-size: 2em;
+}
+
+/*   WebAgency titre slideshow   */
+.titleBlue {
+    color: #5cadd3; /* Couleur bleu */
+}
+
+#slider figcaption p {
+    font-weight: 900;
+    font-size: 1.1em;
+    margin-top: 13px;
+}
+
+/*    Boutons texte slideshow    */
+#slider figcaption button {
+    background-color: #5cadd3;
+    color: white;
+    height: 43px;
+    font-weight: bold;
+    font-size: 1.2em;
+    padding: 0 15px;
+    border-radius: 2px;
+    box-shadow: 0px 3px #4494bb;
+    border: none;
+    margin-top: 28px;
+}
+  
+#slider figcaption button:hover {
+    cursor: pointer;
+    background-color: #51a3c9;
+}
+
+/*    Boutons navigation slideshow    */
+#buttonNavigationLeft, #buttonNavigationRight {
+    position: absolute; /* Permets de placer les boutons de navigation */
+    top: 0;
+    padding-top: 45px;
+    width: 35px; /* Largeur */
+    height: 100%; /* Toute la hauteur du slide */
+    z-index: 10;
+    display: flex; /* Place le chevron correctement */
+    align-items: center; /* Centre les deux boutons sur le slide */
+}
+
+#buttonNavigationLeft {
+    left: 0; /* Place le bouton de navigation à gauche */
+}
+
+#buttonNavigationRight {
+    right: 0; /* Place le bouton de navigation à droite */
+}
+
+.button {
+    background-color: rgba(0, 0, 0, 0.2); /* Un fond noir avec une transparence */
+    /* Dimensions des boutons */
+    height: 70px;
+    width: 35px;
+}
+
+#buttonNavigationLeft .button {
+    border-radius:  0 50px 50px 0; /* crée la forme du bouton */
+}
+
+#buttonNavigationRight .button {
+    border-radius: 50px 0 0 50px; /* crée la forme du bouton */
+}
+
+/*    Création des chevrons pour les boutons de navigation    */
+.chevron {
+	border-style: solid; /* Style de bordure */
+	border-width: 0.13em 0.13em 0 0; /* Épaisseur des bordures */
+    display: inline-block;
+    color: #fff; /* Couleur des chevrons */
+    /* Dimensions des chevrons */
+    height: 13px;
+    width: 13px;
+    /* Placement des chevrons */
+    position: relative;
+    top: 40%;
+}
+
+/*   Chevron gauche   */
+.chevron.left {
+    left: 10px; /* Positionne le chevron gauche */
+    transform: rotate(-135deg); /* Effectue une rotation le carré afin de faire la forme du chevron */
+}
+
+/*   Chevron droit   */
+.chevron.right {
+    right: -10px; /* Positionne le chevron droit */
+    transform: rotate(45deg); /* Effectue une rotation le carré afin de faire la forme du chevron */
+}
+
+#slideshow:target #slider {
+    left: -100%; /* Permets d'aller sur la seconde image */
+    /* Place l'animation sur pause lors du clic sur le bouton */
+    animation-play-state: paused; /* Navigateurs récents */
+    -webkit-animation-play-state: paused; /* Webkit */
+    -moz-animation-play-state: paused; /* Mozilla */
+    -o-animation-play-state: paused; /* Opera */
+}
+
+#slideshow:target #positionLine {
+    left: 65%; /* Permets de déplacer la barre de position du slide */
+    /* Place l'animation de la barre de position en pause */
+    animation-play-state: paused; /* Navigateurs récents */
+    -webkit-animation-play-state: paused; /* Webkit */
+    -moz-animation-play-state: paused; /* Mozilla */
+    -o-animation-play-state: paused; /* Opera */
+}
+
+#slider:target #slideshow {
+    left: 0; /* Permets de revenir sur la première image */
+    /* Remets l'animation on route lorsque l'on revient sur la première image */
+    animation-play-state: running; /* Navigateurs récents */
+    -webkit-animation-play-state: running; /* Webkit */
+    -moz-animation-play-state: running; /* Mozilla */
+    -o-animation-play-state: running; /* Opera */
+}
+
+/*   Fond de la barre de position du slide   */
+#slidePosition {
+    width: 100%; /* Celle-ci aura la même largeur que le slideshow */
+    height: 6px;
+    background: rgba(0,0,0,0.1); /* Fond noir avec une transparence */
+    position: absolute;
+    bottom: 4px;
+}
+
+/*   Barre de position du slide   */
+#positionLine {
+    height: 100%; /* Occupera 100% de la hauteur du fond donc 6px */
+    width: 35%; /* Largeur de la barre */
+    background: #5cadd3; /* Couleur de la barre */
+    position: absolute;
+    left: 0;
+    /* Déclenche l'animation de la barre lorsque le bouton de navigation sera cliqué */
+    transition: left 2s; /* Navigateurs récents */
+    -webkit-transition: left 2s; /* Webkit */
+    -moz-transition: left 2s; /* Mozilla */
+    -o-transition: left 2s; /* Opera */
+    /* Déclenche l'animation créée en début de fichier */
+    animation: slideshowPosition 32s infinite alternate; /* Navigateurs récents */
+    -webkit-animation: slideshowPosition 32s infinite alternate; /* Webkit */
+    -moz-animation: slideshowPosition 32s infinite alternate; /* Mozilla */
+    -o-animation: slideshowPosition 32s infinite alternate; /* Opera */
+}
+
+/* ----------------- */
+/* --   SECTION   -- */
+/* ----------------- */
+/* ----------------- */
+/* ==   Services     */
+/* ----------------- */
+#sectionServices {
+    margin-top: 5%;
+}
+
+/*    Titre de la section    */
+.titleSection {
+    font-size: 2.6em;
+    text-align: center; /* Centre le titre */
+    text-transform: uppercase; /* Le titre de la section en majuscules */
+    margin-bottom: 21px;
+}
+
+/*   Création de la ligne de séparation   */
+.separatorLine {
+    width: 140px; /* Largeur de la ligne */
+    margin: auto; /* Centre la ligne */
+    text-align: center; /* Centre le point sur la ligne */
+    color: #5cadd3; /* Couleur du point */
+    height: 12px;
+    border-bottom: 1px solid rgba(204,204,204,0.50); /* Crée la ligne de séparation */
+}
+
+/*   Point de la ligne de séparation    */
+.separatorPoint {
+    padding: 5px;
+    background-color: #fff;
+    border-radius: 50%;
+}
+
+/*   Intro section   */
+.marketingSection {
+    font-size: 0.9em;
+    width: 28%;
+    margin: 26px auto 0 auto; /* Centre et descend le paragraphe de section */
+    text-align: center; /* Centre le texte */
+    color: #64686d;
+}
+
+#iMac {
+    margin-right: 7%; /* Marge à droite de l'image permet de séparer la div #containerDroite */
+}
+
+/*    Contenu section    */
+#containerDroite {
+    width: 35%; /* Largeur du bloc de droite */
+    margin-top: 5em; /* Descend le bloc */
+}
+
+.serviceDescription {
+    display: flex; /* Aligne l’icône et la description du service */
+    padding-bottom: 5%; /* Espace chaque description de service */
+}
+
+.detailService {
+    margin-left: 27px; /* Évite au texte de coller à l’icône */
+}
+
+.titleService {
+    font-size: 1.3em;
+}
+
+/*    Petit paragraphe de la description du service    */
+.detailService p {
+    margin-top: 8px; /* Espace le paragraphe du titre */
+    text-align: justify; /* Le texte sera justifié */
+    line-height: 22px; /* Dimension de l'interligne */
+    font-size: 0.9em;
+    color: #686c71; /* Couleur du texte */
+}
+
+/*    Création de l’icône des services    */
+.icones {
+    position: relative;
+    display: inline-block; /* Positionne les logos de l’icône horizontalement */
+    border: 1px solid rgba(204,204,204,0.50); /* Bordures de l’icône */
+    border-radius: 50%; /* Crée la forme arrondie de l’icône */
+    padding: 15px; /* Agrandi le cercle de l’icône uniformément en centrant les logos */
+    height: 32px; /* Hauteur de l’icône */
+}
+
+.icones:hover {
+    box-shadow: 0 0 20px #41A1CB; /* Ombre autour de l’icône au passage de la souris */
+}
+
+.icones span {
+    color: #41A1CB; /* Couleur des logos */
+}
+
+.iconePoint {
+    position: absolute; /* Permets de placer le point sur la bordure */
+    padding: 2px;
+    background-color: #fff;
+    border-radius: 50%; /* Arrondi la figure du point (permet un hover plus propre) */
+    /* Place le point sur la bordure */
+    right: -7px;
+    top: 35%;
+}
+
+/* ------------------------------- */
+/* ==   Logos du fontAwesome       */
+/* ------------------------------- */
+/* --   UX Design   -- */
+span.fa-line-chart {
+    font-size: 1.8em;
+}
+
+/* --   UI Design   -- */
+span.fa-cubes {
+    font-size: 1.6em;
+}
+
+/* --   SEO   -- */
+span.fa-pie-chart {
+    font-size: 2.05em;
+}
+
+/* -------------------- */
+/* ==   Portfolio       */
+/* -------------------- */
+#sectionPortfolio {
+    background-color: #f5f5f5;
+    padding: 30px 0;
+    margin-top: 3.5%;
+}
+
+#menuPortfolio {
+    margin-top: 57px; /* Descend le menu */
+    text-align: center; /* Centre le menu */
+}
+
+#menuPortfolio input {
+    display: none; /* Fait disparaitre les radiobox */
+}
+
+/*    Liens du menu portfolio    */
+label.lienAllWorks, 
+label.lienCreative, 
+label.lienCorporate, 
+label.lienPortfolio {
+    position: relative;
+    display: inline-block;
+    width: 89px;
+    text-align: center;
+    padding: 10px 0;
+    text-decoration :none;
+    font-size: 0.8em;
+    font-weight: 600;
+    background-color: #e5e5e5; /* Couleur de fond */
+    color: #65696e; /* Couleur du texte */
+    cursor: pointer;
+}
+
+/*   Sélectionne le premier lien du menu    */
+label.lienAllWorks {
+    border-radius: 5px 0 0 5px; /* Arrondi les bordures haut et basse gauche */
+}
+
+/*    Sélectionne le dernier lien du menu    */
+label.lienPortfolio {
+    border-radius: 0 5px 5px 0; /* Arrondi les bordures haut et basse droite */
+}
+
+/*   Effet hover sur les liens   */
+label.lienAllWorks:hover,
+label.lienCreative:hover,
+label.lienCorporate:hover,
+label.lienPortfolio:hover {
+    background-color: #cbc9c9;
+}
+
+/*   Liens active   */
+.lienAllWorks:checked ~ label.lienAllWorks, 
+.lienCreative:checked ~ label.lienCreative, 
+.lienCorporate:checked ~ label.lienCorporate, 
+.lienPortfolio:checked ~ label.lienPortfolio {
+    background-color: #5cadd3;
+    color:#fff;
+    box-shadow: inset 0 -3px #468cad; /* Crée une ombre sous le lien active */
+}
+
+/*   Crée un élément sur le lien active, cela servira à créer une flèche sur le bas du lien active   */
+.lienAllWorks:checked ~ label.lienAllWorks:after,
+.lienCreative:checked ~ label.lienCreative:after,
+.lienCorporate:checked ~ label.lienCorporate:after,
+.lienPortfolio:checked ~ label.lienPortfolio:after {
+    content: ""; /* Ajoute l'élément que l'on va créer */
+    display: block;
+    /* Ses différentes bordures créeront la flèche du dessous */
+    border-left: 9px solid transparent;
+    border-right: 9px solid transparent;
+    border-top: 9px solid #468cad;
+    position: absolute; /* Permets de placer l'élément sous le lien active */
+    top: 100%;
+    right: 37%;
+}
+
+/*   Tri des images lors de la sélection    */
+.lienCreative:checked ~ #projets figure:not(.lienCreative),
+.lienCorporate:checked ~ #projets figure:not(.lienCorporate),
+.lienPortfolio:checked ~ #projets figure:not(.lienPortfolio) {
+    position: absolute;
+    opacity: 0;
+    transform: translate(-200%, -200%) scale(0); /* Effet sur les images lors d'une sélection dans le menu */
+}
+
+/*   Contenu de la section Portfolio    */
+#projets {
+    /* Permets au contenu de ne pas se déformer sur les grands écrans */
+    margin: 58px 40px; /* Descends le contenu et placent des marges de chaque côté */
+    display: flex; /* Rends les éléments flexibles */
+    flex-wrap: wrap; /* Fait passer les éléments à la ligne */
+    justify-content: center;
+}
+
+/*    La balise figure contient l'image du projet    */
+#projets figure {
+    width: 325px;
+    overflow: hidden;
+    position: relative;
+    z-index: 5;
+    cursor: pointer;
+    margin: 15px;
+    opacity: 1;
+    transition: all 2s;
+}
+
+#projets img {
+    width: 100%; /* L'image prend 100% des 325px de la balise figure */
+    display: block; /* Supprime la marge entre l'image et le figcaption */
+}
+
+#projets figcaption {
+    position: absolute;
+    left: 0; right: 0; /* Permet au figcaption d'occuper la largeur de l'image */
+    z-index: -1; /* Passe le figcaption en arrière */
+    background-color: rgba(0, 0, 0, 0.5); /* Couleur de fond avec une transparence */
+    color: #fff;
+    padding: 9px 0 15px 15px;
+    text-align: left; /* Annule le text-align: center de la div menuPortfolio */
+}
+
+#projets figure:hover figcaption {
+    z-index: 2;
+    transform: translateY(-100%); /* Place le figcaption sur l'image */
+    /* Anime la remonter du figcaption lors du passage de la souris */
+    transition: transform 0.5s linear; /* Navigateurs récents */
+    -webkit-transition: transform 0.5s linear; /* Webkit */
+    -moz-transition: transform 0.5s linear; /* Mozilla */
+    -ms-transition: transform 0.5s linear;  /* Internet explorer */
+    -o-transition: transform 0.5s linear; /* Opera */
+
+}
+
+/*   Selectionne le h2 de figcaption enfant de #projets figure   */
+#projets figure > figcaption h2 {
+    font-size: 1.2em;
+}
+/*   Selectionne le h3 de figcaption enfant de #projets figure   */
+#projets figure > figcaption h3 {
+    padding-top: 5px;
+    font-size: 0.8em;
+    font-weight: 500;
+}
+
+/*    Logo du fontAwesome sur le figcaption    */
+#projets figcaption > span {
+    position: absolute;
+    padding: 13px;
+    background-color: #5cadd3;
+    border: 3px solid #fff;
+    border-radius: 50%; /* Donne un aspect arrondi au logo */
+    /* Placement du figcaption */
+    right: 18px;
+    bottom: 64%;
+}
+
+/* ------------------ */
+/* ==   Contact       */
+/* ------------------ */
+footer { /* Footer */
+    position: relative; /* Les éléments ne sortiront pas du footer */
+}
+
+/*   Fond bleu   */
+#blueBackground {
+    /* Dimensions de la div */
+    width: 100%;
+    height: 628px;
+    background: rgba(92,173,211,0.25); /* Fond bleu avec transparence */
+    z-index: 2; /* Le fond bleu passe devant la carte */
+}
+
+iframe {
+    position: absolute; /* La carte sort du flux */
+    z-index: -1; /* Elle passe sous le fond bleu */
+    border: 0;
+    width: 100%; /* Occupera toute la largeur de l'écran */
+    height: 628px;
+}
+
+/* --   Hack Microsoft edge et IE11 qui gèrent difficilement le hover sur la balise iframe   -- */
+@charset "";
+_:-ms-lang(x), iframe {
+    z-index: 2; /* La carte passe devant le fond bleu */
+}
+
+/*   Fait passer la carte devant lors du passage de la souris, cela permet d’accéder à la carte   */
+#blueBackground:hover iframe {
+    z-index: 4;
+}
+
+/*   Cadre de contact   */
+#formulaireContact {
+    position: absolute;/* Permets de placer le cadre sur la carte */
+    z-index: 5; /* Permets de laisser le cadre au-dessus du contenu */
+    /* Permets de placer le cadre */
+    right: 10%;
+    top: 7%;
+    width: 325px; /* Largeur du cadre */
+    background-color: rgba(255, 255, 255, 0.80); /* Couleur avec transparence */
+    padding: 20px;
+}
+
+#coordonnees {
+    padding: 18px 0 3px 0;
+    line-height: 1.5em;
+    font-size: 0.8em;
+    color: #64686d;
+}
+
+#telephone {
+    border-bottom: 1px dotted #000; /* Légère bordure pointillée sur le mot tel */
+}
+
+/*   Formulaire de contact   */
+#formulaireContact input, textarea {
+    width: 97%;
+    height: 32px;
+    margin-top: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding-left: 13px;
+}
+
+textarea {
+    height: 172px;
+    padding-top: 8px;
+    font-size: 1.1em;
+    font-weight: 600;
+}
+
+/*   Bouton d'envoi   */
+input#boutonEnvoi {
+    padding: 0;
+    background-color: #5cadd3;
+    border: none;
+    box-shadow: inset 0 -2px #4494bb; /* Place une ombre en dessous du bouton */
+    color: #fff;
+    font-weight: 600;
+    /* Dimensions du bouton d'envoi */
+    width: 143px;
+    height: 34px;
+}
+
+input#boutonEnvoi:hover {
+    cursor: pointer;
+}
+
+/* ------------------------ */
+/* ==   Media Queries       */
+/* ------------------------ */
+/* Tablettes à petits écrans */
+@media screen and (max-width: 979px) {
+    #buttonNavigationLeft, #buttonNavigationRight {
+        display: none;
+    }
+    #slider figure figcaption {
+        top: 42%;
+    }
+    /*  Titres texte slideshow  */
+    #slider figcaption h1 {
+        font-size: 3.5vw;
+    }
+    /*   Titre texte second slideshow    */
+    #slider figure:last-child figcaption h1 {
+        font-size: 3vw;
+    }
+    /* Texte marketing des sections */
+    .marketingSection {
+        width: 90%;
+        font-size: 1.2em;
+    }
+    /* Section services */
+    article#listeServices {
+        flex-direction: column;
+        align-items: center;
+    }
+    /* La div qui contient la description des services présents sur le côté de l'image sera réduite et décalée légèrement */
+    #containerDroite {
+        margin: 0;
+        width: 90%;
+    }
+    /* Le titre des services */
+    .titleService {
+        font-size: 1.5em;
+    }
+    /* Paragraphe de description du service */
+    .detailService p {
+        font-size: 1.2em;
+    }
+    /* Section portfolio */
+    label.lienAllWorks, 
+    label.lienCreative, 
+    label.lienCorporate, 
+    label.lienPortfolio {
+        width: 70px; /* Diminue la largeur des liens du menu portfolio */
+    }
+    #projets figure {
+        width: 290px;
+    }
+    #projets figcaption {
+        z-index: 2; /* Repasse le figcaption devant */
+        transform: translateY(-100%); /* Place le figcaption sur l'image et évite le hover */
+    }
+    /* Section contact */
+    #blueBackground {
+        height: 0; /* Fait disparaître la div */
+    }
+    iframe {
+        position: relative; /* La carte repasse dans le flux */
+        height: 400px; /* La carte est réduite sur les tablettes et smartphones */
+        z-index: 2; /* Elle repasse en avant */
+    }
+    #formulaireContact {
+        position: relative; /* Le cadre repasse dans le flux et passe automatiquement au-dessus de la carte */
+        top: 0; right: 0; /* Les propriétés de placement tombent à 0 */
+        width: 100%; /* Occupe toute la largeur */
+        margin: 20px 0 20px 0; /* Place toutes les marges à 0 et ajoute une marge en bas */
+        padding: 0;
+        /* Place les éléments du cadre correctement */
+        display: flex;
+        flex-direction: column;
+        text-align: center; /* Aligne les champs */
+    }
+    #formulaireContact input, textarea {
+        width: 50%; /* Largeur des champs de saisi */
+    }
+    input#boutonEnvoi {
+        /* On replace les dimensions du bouton d'envoi dû à la largeur modifier des champs de saisis */
+        width: 143px;
+    }
+}
+/* De smartphones à tablettes */
+@media screen and (max-width: 767px) {
+    /* On place les éléments du header en colonne */
+    #topHeader {
+        flex-direction: column;
+        padding-bottom: 10px;
+    }
+    /* décale le logo */
+    #topHeader h1 img {
+        margin-top: 10px;
+    }
+    /* Légère modification du menu afin de l'adapter aux smartphones */
+    nav a {
+        padding: 0 5px;
+        font-size: 1.2em;
+    }
+    nav a:hover, nav a.active {
+        border: none;
+        text-decoration: underline;
+    }
+}
+/* Smartphones */
+@media screen and (max-width: 480px) {
+    /* On fait disparaître le slide qui ne sert pas sur les petit écrans */
+    #slideshow {
+        display: none;
+    }
+    /* Section services */
+    .titleSection {
+        font-size: 8vw;
+    }
+    #projets figure {
+        margin: 15px 0;
+    }
+    #formulaireContact input, textarea {
+        width: 70%; /* Largeur des champs de saisi */
+    }
+    input#boutonEnvoi {
+        /* On replace les dimensions du bouton d'envoi dû à la largeur modifier des champs de saisis */
+        width: 143px;
+    }
+    article {
+        margin: 0;
+    }
+    #iMac {
+        margin: 20px 0;
+        width: 75%; /* Redimensionne l'image de l'iMac */
+    }
+    #iMac img {
+        width: 100%;
+    }
+}

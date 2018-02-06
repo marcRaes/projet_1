@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Meta viewport pour les mobiles -->
+        <meta name="description" content="WebAgency réalise vos projets web, site internet, portfolio, e-commerce" /> <!-- Balise de référencement -->
+        <!-- Open Graph Facebook -->
+        <meta property="og:title" content="WebAgency"/>
+        <meta property="og:type" content="site web"/>
+        <meta property="og:url" content="http://www.webagency.com/"/>
+        <meta property="og:image" content="images/webagency.png"/>
+        <meta property="og:description" content="WebAgency réalise vos projets web, site internet, portfolio, e-commerce"/>
+        <!-- Open Graph Twitter -->
+        <meta name="twitter:card" content="WebAgency réalise vos projets web">
+        <meta name="twitter:site" content="WebAgency">
+        <meta name="twitter:title" content="WebAgency réalise vos projets web">
+        <meta name="twitter:description" content="WebAgency réalise vos projets web, site internet, portfolio, e-commerce">
+        <meta name="twitter:image" content="images/slider/petite_fille_mascotte.jpg">
+        <!-- Titre -->
+        <title>WebAgency - L'agence de tous vos projets</title>
+        <!-- Feuille de style -->
+        <link rel="stylesheet" type="text/css" media="all" href="css/style.css" />
+        <!-- Feuille du fontAwesome -->
+        <link rel="stylesheet" type="text/css" media="all" href="font-awesome-4.7.0/css/font-awesome.min.css" />
+    </head>
+
+    <body>
+        <!-- Header -->
+        <header id="header">
+            <!-- topHeader - Logo + menu de navigation -->
+            <div id="topHeader">
+
+                <h1><img src="images/webagency.png" alt="Webagency Paris" /></h1> <!-- Logo -->
+
+                <nav> <!-- Menu de navigation -->
+                    <ul>
+                        <li><a href="index.html" class="active">accueil</a></li>
+                        <li><a href="#services">services</a></li>
+                        <li><a href="#portfolio">portfolio</a></li>
+                        <li><a href="#contact">contact</a></li>
+                    </ul>
+                </nav>
+
+            </div> <!-- /topHeader -->
+
+            <!-- Slideshow -->
+            <div id="slideshow">
+                
+                <!-- Bouton de navigation gauche -->
+                <span id="buttonNavigationLeft">
+                    <a href="#slider" class="button"><span class="chevron left"></span></a> <!-- Bouton gauche -->
+                </span>
+                
+                <!-- Slider -->
+                <div id="slider">
+                
+                    <!-- Conteneur de la première image -->
+                    <figure>
+                
+                        <!-- Premiere image de slide -->
+                        <img src="images/slider/petite_fille_mascotte.jpg" alt="WebAgency : L'agence de tous vos projets !" />
+                
+                        <!-- Légende de la première image -->
+                        <figcaption>
+                
+                            <h1><span class="titleBlue">WebAgency</span> : L'agence de tous vos projets !</h1>
+                            <p>Vous avez un projet web ? La <strong>WebAgency</strong> vous aide à le réaliser!</p>
+                            <button type="button">Plus d'infos</button>
+                
+                        </figcaption> <!-- /Légende de la première image -->
+                
+                    </figure> <!-- /Conteneur de la première image -->
+                
+                    <!-- Conteneur de la seconde image -->
+                    <figure>
+                
+                        <!-- Seconde image de slide -->
+                        <img src="images/slider/petit_garçon_chef.jpg" alt="WebAgency : Designer, Développeur, Expert SEO, responsable marketing..." />
+                
+                        <!-- Légende de la seconde image -->
+                        <figcaption>
+                
+                            <h1><span class="titleBlue">WebAgency</span> : Designers, Développeurs, Experts SEO, Responsables marketing...</h1>
+                            <p>Nos experts réalisent vos projets les plus exigeants!</p>
+                            <button type="button">Nos réussites</button>
+                
+                        </figcaption> <!-- /Légende de la seconde image -->
+                
+                    </figure> <!-- /Conteneur de la seconde image -->
+                
+                </div> <!-- /Slider -->
+                
+                <!-- Boutons de navigation placés à droite -->
+                <span id="buttonNavigationRight">
+                    <a href="#slideshow" class="button"><span class="chevron right"></span></a> <!-- Boutons droit -->
+                </span>
+                
+                <!-- Barre de position du slide -->
+                <div id="slidePosition">
+                    <div id="positionLine"></div>
+                </div>
+                
+            </div> <!-- /Slideshow -->
+
+        </header> <!-- /header -->
+
+        <div id="services"></div> <!-- Ancre pour la section Services -->
+
+        <!-- Première section | Les services -->
+        <section id="sectionServices">
+            <h2 class="titleSection">Nos services</h2>
+
+            <!-- Ligne de séparation -->
+            <div class="separatorLine">
+                <span class="fa fa-circle separatorPoint"></span> <!-- fa ainsi que fa-circle sont les class du CSS fontAwesome elle crée le point de la ligne de séparation -->
+            </div>
+
+            <p class="marketingSection"> <!-- Petit texte de la section -->
+                Vous voulez le meilleur des site internet ? <br />
+                Nous vous offrons les meilleurs services qui puissent exister dans la <strong>création de site internet</strong>.
+            </p>
+
+            <!-- Contenu de la premiére section | services -->
+            <article id="listeServices">
+
+                    <p id="iMac"><img src="images/imac.png" alt="IMac" /></p> <!-- image section services -->
+
+                <!-- Container à droite de l'image -->
+                <div id="containerDroite">
+
+                    <!-- div description service 1 -->
+                    <div class="serviceDescription">
+
+                        <!-- Icone du service -->
+                        <div class="icones">
+                            <span class="fa fa-line-chart"></span> <!-- fa ainsi que fa-line-chart sont les class du CSS fontAwesome elles insèrent l'icône du service -->
+                            <span class="fa fa-circle iconePoint"></span> <!-- fa ainsi que fa-circle sont les class du CSS fontAwesome elle crée le même point que la ligne de séparation -->
+                        </div>
+
+                        <!-- div qui détaille le service -->
+                        <div class="detailService">
+                            <h2 class="titleService">UX design</h2>
+                            <p>
+                                C'est parce que vous voulez la meilleure expérience pour vos visiteurs, 
+                                que nos <em>UX designer</em> se coupe en deux pour vous.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- div description service 2 -->
+                    <div class="serviceDescription">
+
+                        <!-- Icone du service -->
+                        <div class="icones">
+                            <span class="fa fa-cubes"></span> <!-- fa ainsi que fa-line-chart sont les class du CSS fontAwesome elles insèrent l'icône du service -->
+                            <span class="fa fa-circle iconePoint"></span> <!-- fa ainsi que fa-circle sont les class du CSS fontAwesome elle crée le même point que la ligne de séparation -->
+                        </div>
+
+                        <!-- div qui détaille le service -->
+                        <div class="detailService">
+                            <h2 class="titleService">UI design</h2>
+                            <p>
+                                C'est parce que l'aspect visuel d'un site est tout aussi important que l'expérience qu'on en fait, 
+                                que nos <em>UI Designer</em> sont parmi les meilleurs.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- div description service 3 -->
+                    <div class="serviceDescription">
+
+                        <!-- Icone du service -->
+                        <div class="icones">
+                            <span class="fa fa-pie-chart"></span> <!-- fa ainsi que fa-line-chart sont les class du CSS fontAwesome elles insèrent l'icône du service -->
+                            <span class="fa fa-circle iconePoint"></span> <!-- fa ainsi que fa-circle sont les class du CSS fontAwesome elle crée le même point que la ligne de séparation -->
+                        </div>
+
+                        <!-- div qui détaille le service -->
+                        <div class="detailService">
+                            <h2 class="titleService">SEO</h2>
+                            <p>
+                                Pour que votre site figure parmi les premiers dans les moteurs de recherche, faites confiance à nos <em>experts SEO</em>.
+                            </p>
+                        </div>
+                    </div>
+
+                </div> <!-- /Container à droite de l'image -->
+
+            </article> <!-- /Contenu de la première section | services -->
+
+        </section> <!-- /section services -->
+
+        <div id="portfolio"></div> <!-- Ancre pour la section Portfolio -->
+
+        <!-- Seconde section | Portfolio -->
+        <section id="sectionPortfolio">
+            
+            <h3 class="titleSection">Nos projets</h3>
+
+            <!-- Ligne de séparation -->
+            <div class="separatorLine">
+                <span class="fa fa-circle separatorPoint"></span> <!-- fa ainsi que fa-circle sont les class du CSS fontAwesome elle crée le point de la ligne de séparation -->
+            </div>
+
+            <p class="marketingSection"> <!-- Petit texte de la section -->
+                Ils nous ont fait confiance et ils ne l'ont pas regrettés, découvrez les <strong>sites internet</strong> de nos clients, 
+                réalisé par nos équipes. Vous aussi faîte nous confiance, vous ne le regretterais pas.
+            </p>
+
+            <!-- Menu portfolio -->
+            <div id="menuPortfolio">
+                
+                <!-- Le menu est réalisé en champs radio afin de permettre la sélection des images -->
+                <input type="radio" name="navPortfolio" id="lienAllWorks" class="lienAllWorks" checked /><label for="lienAllWorks" class="lienAllWorks">All works</label><!--
+                --><input type="radio" name="navPortfolio" id="lienCreative" class="lienCreative" /><label for="lienCreative" class="lienCreative">Créative</label><!--
+                --><input type="radio" name="navPortfolio" id="lienCorporate" class="lienCorporate" /><label for="lienCorporate" class="lienCorporate">Corporate</label><!--
+                --><input type="radio" name="navPortfolio" id="lienPortfolio" class="lienPortfolio" /><label for="lienPortfolio" class="lienPortfolio">Portfolio</label>
+
+                <!-- Contenu de la seconde section | Portfolio -->
+                <article id="projets">
+
+                    <figure class="lienCorporate">
+                        <img src="images/portfolio/net-optic.jpg" alt="Net'Optic - Un opticien qui a son site" /> <!-- image du projet -->
+
+                            <figcaption> <!-- Légende du projet -->
+                                <span class="fa fa-eye"></span> <!-- Icône œil FontAwesome -->
+                                <h2>Net'Optic</h2>
+                                <h3>Un opticien qui a son site</h3>
+                            </figcaption> <!-- /Légende du projet -->
+
+                    </figure>
+
+                    <figure class="lienCorporate">
+                        <img src="images/portfolio/deguise-toi.jpg" alt="Déguises-toi - Louer son déguisement" /> <!-- image du projet -->
+
+                        <figcaption> <!-- Légende du projet -->
+                            <span class="fa fa-eye"></span> <!-- Icône œil FontAwesome -->
+                            <h2>Déguises-toi</h2>
+                            <h3>Louer son déguisement</h3>
+                        </figcaption> <!-- /Légende du projet -->
+
+                    </figure>
+
+                    <figure class="lienCreative">
+                        <img src="images/portfolio/pompadour.jpg" alt="Célèbre site Pompadour - La marque de vêtements" /> <!-- image du projet -->
+
+                        <figcaption> <!-- Légende du projet -->
+                            <span class="fa fa-eye"></span> <!-- Icône œil FontAwesome -->
+                            <h2>Célèbre site Pompadour</h2>
+                            <h3>La marque de vêtements</h3>
+                        </figcaption> <!-- /Légende du projet -->
+
+                    </figure>
+
+                    <figure class="lienPortfolio">
+                        <img src="images/portfolio/architecture-art.jpg" alt="Architecture - Art - L'architecture par internet" /> <!-- image du projet -->
+
+                        <figcaption> <!-- Légende du projet -->
+                            <span class="fa fa-eye"></span> <!-- Icône œil FontAwesome -->
+                            <h2>Architecture - Art</h2>
+                            <h3>L'architecture par internet</h3>
+                        </figcaption> <!-- /Légende du projet -->
+
+                    </figure>
+        
+                    <figure class="lienCreative">
+                        <img src="images/portfolio/vet-web.jpg" alt="Vêt'Web - Acheter ses vêtements sur internet devient facile" /> <!-- image du projet -->
+
+                        <figcaption> <!-- Légende du projet -->
+                            <span class="fa fa-eye"></span> <!-- Icône œil FontAwesome -->
+                            <h2>Vêt'Web</h2>
+                            <h3>Acheter ses vêtements sur internet devient facile</h3>
+                        </figcaption> <!-- /Légende du projet -->
+
+                    </figure>
+        
+                    <figure class="lienCorporate">
+                        <img src="images/portfolio/voyage-gratis.jpg" alt="Voyage gratis - L'agence de voyages low cost sur internet" /> <!-- image du projet -->
+
+                        <figcaption> <!-- Légende du projet -->
+                            <span class="fa fa-eye"></span> <!-- Icône œil FontAwesome -->
+                            <h2>Voyage gratis</h2>
+                            <h3>L'agence de voyages low cost sur internet</h3>
+                        </figcaption> <!-- /Légende du projet -->
+
+                    </figure>
+
+                    <figure class="lienPortfolio">
+                        <img src="images/portfolio/space-voyage.jpg" alt="Space Voyage - Réservez votre voyage dans l'espace" /> <!-- image du projet -->
+
+                        <figcaption> <!-- Légende du projet -->
+                            <span class="fa fa-eye"></span> <!-- Icône œil FontAwesome -->
+                            <h2>Space Voyage</h2>
+                            <h3>Réservez votre voyage dans l'espace</h3>
+                        </figcaption> <!-- /Légende du projet -->
+
+                    </figure>
+            
+                    <figure class="lienPortfolio">
+                        <img src="images/portfolio/bureautique_center.jpg" alt="Bureautique center - Site de fourniture pour la bureautique" /> <!-- image du projet -->
+
+                        <figcaption> <!-- Légende du projet -->
+                            <span class="fa fa-eye"></span> <!-- Icône œil FontAwesome -->
+                            <h2>Bureautique center</h2>
+                            <h3>Site de fourniture pour la bureautique</h3>
+                        </figcaption> <!-- /Légende du projet -->
+
+                    </figure>
+            
+                    <figure class="lienCreative">
+                        <img src="images/portfolio/fast-food_on_line.jpg" alt="Fast-food on line - Commander votre repas sur internet" /> <!-- image du projet -->
+
+                        <figcaption> <!-- Légende du projet -->
+                            <span class="fa fa-eye"></span> <!-- Icône œil FontAwesome -->
+                            <h2>Fast-food on line</h2>
+                            <h3>Commander votre repas sur internet</h3>
+                        </figcaption> <!-- /Légende du projet -->
+
+                    </figure>
+
+                </article> <!-- /Contenu de la seconde section | Portfolio -->
+            </div>
+
+        </section> <!-- /Seconde section | Portfolio -->
+
+        <div id="contact"></div> <!-- Ancre pour la section Contact -->
+
+        <!-- Footer | Contact -->
+        <footer>
+
+            <!-- Div pour le fond bleu -->
+            <div id="blueBackground">
+
+                <!-- Cadre coordonnées -->
+                <div id="formulaireContact">
+                        
+                    <h2>Contact Info</h2>
+                        
+                    <!-- Nos coordonnées -->
+                    <adress id="coordonnees">
+                        <strong>WebAgency SAS</strong><br />
+                        7 cité paradis 75010 Paris<br />
+                        <span id="telephone">Tel :</span> 01 80 88 80 30
+                    </adress>
+                        
+                    <!-- Formulaire de contact -->
+                    <form method="post" action="index.html">
+                        
+                        <p>
+                            <input type="text" name="nom" id="nom" placeholder="Nom" required /> <!-- Nom -->
+                        </p>
+                        <p>
+                            <input type="email" name="email" id="email" placeholder="Email" required /> <!-- Email -->
+                        </p>
+                        <p>
+                            <input type="text" name="sujet" id="sujet" placeholder="Sujet" required /> <!-- Sujet -->
+                        </p>
+                        <p>
+                            <textarea name="message" id="message" placeholder="Message" required ></textarea> <!-- Message -->
+                        </p>
+                        <p>
+                            <input type="submit" id="boutonEnvoi" value="Envoyer Message" /> <!-- Bouton d'envoi -->
+                        </p>
+                        
+                    </form> <!-- /Formulaire de contact -->
+                        
+                </div> <!-- /Cadre coordonnées -->
+
+                <!-- Carte Google Maps -->
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.12667456568!2d2.350778746827586!3d48.87486165556291!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e14967ef0c5%3A0x7f7c139a3fccae7c!2s7+Cit%C3%A9+Paradis%2C+75010+Paris!5e0!3m2!1sfr!2sfr!4v1502902774566" allowfullscreen></iframe>
+
+            </div>
+
+        </footer> <!-- /Footer | Contact -->
+
+    </body>
+</html>
